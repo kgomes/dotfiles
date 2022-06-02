@@ -4,7 +4,7 @@
 # Check to see if Homebrew is in /opt/homebrew and if so, set some environment variables
 # and paths as they will not be set by default. Old versions of Homebrew may not have this
 # problem as they are in /usr/local so they are included automatically.
-if [ ! -d /opt/homebrew ]; then
+if [ -d /opt/homebrew ]; then
     export HOMEBREW_PREFIX="/opt/homebrew";
     export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
     export HOMEBREW_REPOSITORY="/opt/homebrew";
