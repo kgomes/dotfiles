@@ -1,3 +1,5 @@
+echo "Sourcing .zshrc"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -125,3 +127,5 @@ eval "$(jenv init -)"
 source $(brew --prefix nvm)/nvm.sh
 source $(brew --prefix nvm)/etc/bash_completion.d/nvm
 
+echo "PATH: $PATH"
+echo "Finished sourcing .zshrc"

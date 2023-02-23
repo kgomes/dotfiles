@@ -1,5 +1,6 @@
 # ZShell environment variables. This is the first thing that gets sourced in the chain of
 # configuration files. This is where environment variables go
+echo "Sourcing .zshenv"
 
 # Check to see if Homebrew is in /opt/homebrew and if so, set some environment variables
 # and paths as they will not be set by default. Old versions of Homebrew may not have this
@@ -21,3 +22,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Define the root directory for Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
+
+echo "PATH: $PATH"
+echo "Finished sourcing .zshenv"
