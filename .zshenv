@@ -22,5 +22,26 @@ export NVM_DIR="$HOME/.nvm"
 # Define the root directory for Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 
+# Define some handy aliases
+alias ll="ls -lah"
+alias dcmp="docker-compose"
+alias lt="ls -latr"
+
+# Setup pyenv
+export PATH=$(pyenv root)/shims:$PATH
+if command -v pyenv &>/dev/null; then
+    eval "$(pyenv init -)"
+fi
+if command -v pyenv-virtualenv &>/dev/null; then
+    eval "$(pyenv virtualenv-init -)"
+fi
+
+# Set up jEnv to manage java versions
+eval "$(jenv init -)"
+
+# Set up nvm to manage node versions
+source $(brew --prefix nvm)/nvm.sh
+source $(brew --prefix nvm)/etc/bash_completion.d/nvm
+
 echo "PATH: $PATH"
 echo "Finished sourcing .zshenv"
