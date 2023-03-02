@@ -106,5 +106,10 @@ source $ZSH/oh-my-zsh.sh
 # Stuff below this is my own custom stuff, above is default Zsh
 ###########################################################################
 
+# Define some handy aliases
+alias ll="ls -lah"
+alias dcmp="docker-compose"
+alias lt="ls -latr"
+
 echo "PATH: $PATH"
 echo "Finished sourcing .zshrc"

@@ -11,6 +11,10 @@ if [ -d /opt/homebrew ]; then
     export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
     export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
     export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+else
+    # If Homebrew is not in /opt/homebrew, then it is in /usr/local so we can just set the
+    # path to include it.
+    export PATH="/usr/local/bin:/usr/local/sbin${PATH+:$PATH}";
 fi
 
 # Include jEnv on the path
@@ -21,11 +25,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Define the root directory for Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
-
-# Define some handy aliases
-alias ll="ls -lah"
-alias dcmp="docker-compose"
-alias lt="ls -latr"
 
 # Setup pyenv
 export PATH=$(pyenv root)/shims:$PATH
