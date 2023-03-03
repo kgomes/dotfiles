@@ -11,17 +11,10 @@ if [ -d /opt/homebrew ]; then
     export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
     export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
     export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
-else
-    # If Homebrew is not in /opt/homebrew, then it is in /usr/local so we can just set the
-    # path to include it.
-    export PATH="/usr/local/bin:/usr/local/sbin${PATH+:$PATH}";
 fi
 
-# Include jEnv on the path
-export PATH="$HOME/.jenv/bin:$PATH"
-
-# Define the home location for NVM
-export NVM_DIR="$HOME/.nvm"
+# Set up jEnv to manage java versions
+eval "$(jenv init -)"
 
 # Define the root directory for Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -35,8 +28,8 @@ if command -v pyenv-virtualenv &>/dev/null; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
-# Set up jEnv to manage java versions
-eval "$(jenv init -)"
+# Define the home location for NVM
+export NVM_DIR="$HOME/.nvm"
 
 # Set up nvm to manage node versions
 source $(brew --prefix nvm)/nvm.sh
