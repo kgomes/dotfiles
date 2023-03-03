@@ -1,5 +1,3 @@
-echo "Sourcing .zshrc"
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -110,7 +108,6 @@ source $ZSH/oh-my-zsh.sh
 alias ll="ls -lah"
 alias dcmp="docker-compose"
 alias lt="ls -latr"
-
 # Check to see if Homebrew is in /opt/homebrew and if so, set some environment variables
 # and paths as they will not be set by default. Old versions of Homebrew may not have this
 # problem as they are in /usr/local so they are included automatically.
@@ -145,5 +142,5 @@ export NVM_DIR="$HOME/.nvm"
 source $(brew --prefix nvm)/nvm.sh
 source $(brew --prefix nvm)/etc/bash_completion.d/nvm
 
-echo "PATH: $PATH"
-echo "Finished sourcing .zshrc"
+echo "PATH:"
+tr ':' '\n' <<< "$PATH"
