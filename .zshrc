@@ -142,5 +142,11 @@ export NVM_DIR="$HOME/.nvm"
 source $(brew --prefix nvm)/nvm.sh
 source $(brew --prefix nvm)/etc/bash_completion.d/nvm
 
+# Set the CLASSPATH to include LCM files that I have been working with so lcm-spy will pick them up
+export LCM_ROOT="/Users/kgomes/Documents/mbari/workspace/code/coredata/lcm-bridge/types"
+export CLASSPATH="$CLASSPATH:$LCM_ROOT/ayeris-lcm-types:$LCM_ROOT/compas_lcmtypes:$LCM_ROOT/corenav:$LCM_ROOT/eyeris-lcm-types:$LCM_ROOT/gss:$LCM_ROOT/lrauv-lcmtypes:$LCM_ROOT/marine-sensors-lcmtypes"
+export CLASSPATH="$CLASSPATH:$LCM_ROOT/marine-state-lcmtypes:$LCM_ROOT/mwt-lcm-types:$LCM_ROOT/navproc:$LCM_ROOT/nmea-lcmtypes:$LCM_ROOT/oi-lcm-types:$LCM_ROOT/process-management-lcmtypes:$LCM_ROOT/raw-lcmtypes"
+export CLASSPATH="$CLASSPATH:$LCM_ROOT/wec-lcm-types"
+
 echo "PATH:"
 tr ':' '\n' <<< "$PATH"
