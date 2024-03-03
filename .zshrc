@@ -142,5 +142,8 @@ export NVM_DIR="$HOME/.nvm"
 source $(brew --prefix nvm)/nvm.sh
 source $(brew --prefix nvm)/etc/bash_completion.d/nvm
 
+# Add the JetBrains Toolbox to the path
+export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+
 echo "PATH:"
 tr ':' '\n' <<< "$PATH"
