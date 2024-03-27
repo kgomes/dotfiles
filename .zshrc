@@ -66,5 +66,5 @@ export NVM_DIR="$HOME/.nvm"
 source $(brew --prefix nvm)/nvm.sh
 source $(brew --prefix nvm)/etc/bash_completion.d/nvm
 
-echo "PATH:"
-tr ':' '\n' <<< "$PATH"
+#echo "PATH:"
+#tr ':' '\n' <<< "$PATH"
