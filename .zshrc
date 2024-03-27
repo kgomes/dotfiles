@@ -23,10 +23,16 @@ export PATH="${HOME}/Library/Python/3.9/bin:/opt/homebrew/bin:/usr/local/bin:/us
 # Bash-style time output.
 export TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
 
+# Configure history command
+HISTSIZE=99999
+HISTFILESIZE=999999
+SAVEHIST=$HISTSIZE
+
 # Define some handy aliases
 alias ll="ls -lah"
 alias dcmp="docker-compose"
 alias lt="ls -latr"
+alias hist="history 1"
 
 # Check architecture of Mac
 arch_name="$(uname -m)"
