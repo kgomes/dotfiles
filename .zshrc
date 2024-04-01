@@ -33,6 +33,7 @@ alias ll="ls -lah"
 alias dcmp="docker-compose"
 alias lt="ls -latr"
 alias hist="history 1"
+alias histg="history | grep"
 
 # Check architecture of Mac
 arch_name="$(uname -m)"
