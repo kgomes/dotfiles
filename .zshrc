@@ -34,6 +34,8 @@ alias dcmp="docker-compose"
 alias lt="ls -latr"
 alias hist="history 1"
 alias histg="history 1 | grep"
+alias accentson="defaults write -g ApplePressAndHoldEnabled -bool true"
+alias accentsoff="defaults write -g ApplePressAndHoldEnabled -bool false"
 
 # Check architecture of Mac
 arch_name="$(uname -m)"
