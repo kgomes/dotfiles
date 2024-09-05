@@ -18,7 +18,7 @@ export PS1=$'\n'"%F{green} %*%F %3~ %F{white}"$'\n'"$ "
 plugins=(git brew history history-substring-search)
 
 # Set custom PATH
-export PATH="${HOME}/Library/Python/3.9/bin:/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:${HOME}/bin:${HOME}/.cargo/bin:${PATH}:${HOME}/Library/Application Support/JetBrains/Toolbox/scripts"
+export PATH="${HOME}/Library/Python/3.9/bin:/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:${HOME}/bin:${HOME}/.cargo/bin:${PATH}:${HOME}/Library/Application Support/JetBrains/Toolbox/scripts:${HOME}/Applications/google-cloud-sdk/bin"
 
 # Bash-style time output.
 export TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
