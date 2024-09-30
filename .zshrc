@@ -54,9 +54,9 @@ else
 fi
 
 # Set up jEnv to manage java versions
-echo "Initializing jEnv"
-eval "$(jenv init - --no-rehash)"
-(jenv rehash &) 2> /dev/null
+#echo "Initializing jEnv"
+#eval "$(jenv init - --no-rehash)"
+#(jenv rehash &) 2> /dev/null
 
 # Define the root directory for Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -75,12 +75,12 @@ if command -v pyenv-virtualenv &>/dev/null; then
 fi
 
 # Define the home location for NVM
-export NVM_DIR="$HOME/.nvm"
+#export NVM_DIR="$HOME/.nvm"
 
 # Set up nvm to manage node versions
-echo "Initializing nvm"
-source $(brew --prefix nvm)/nvm.sh
-source $(brew --prefix nvm)/etc/bash_completion.d/nvm
+#echo "Initializing nvm"
+#source $(brew --prefix nvm)/nvm.sh
+#source $(brew --prefix nvm)/etc/bash_completion.d/nvm
 
 #echo "PATH:"
 #tr ':' '\n' <<< "$PATH"
