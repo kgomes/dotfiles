@@ -196,7 +196,7 @@ defaults write com.apple.universalaccess reduceTransparency -bool true
 # Bottom right screen corner → Mission Control
 defaults write com.apple.dock wvous-br-corner -int 2
 defaults write com.apple.dock wvous-br-modifier -int 1048576
-# Top right screen corner → Put display to sleep
+# Top right screen corner → Start screen save
 defaults write com.apple.dock wvous-tr-corner -int 5
 defaults write com.apple.dock wvous-tr-modifier -int 1048576
 # Bottom left screen corner → Desktop
