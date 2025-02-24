@@ -151,20 +151,20 @@ export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32Cube/STM32CubeProgra
 export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources
 
 # Define the root directory for Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
+#export PYENV_ROOT="$HOME/.pyenv"
 
 # Setup pyenv
-echo "Initializing pyenv"
-export PATH=$(pyenv root)/shims:$PATH
-if command -v pyenv &>/dev/null; then
-    eval "$(pyenv init - --no-rehash)"
-    (pyenv rehash &) 2> /dev/null
-fi
-echo "Initializing pyenv-virtualenv"
-if command -v pyenv-virtualenv &>/dev/null; then
-    eval "$(pyenv virtualenv-init - --no-rehash)"
-    (pyenv rehash &) 2> /dev/null
-fi
+#echo "Initializing pyenv"
+#export PATH=$(pyenv root)/shims:$PATH
+#if command -v pyenv &>/dev/null; then
+#    eval "$(pyenv init - --no-rehash)"
+#    (pyenv rehash &) 2> /dev/null
+#fi
+#echo "Initializing pyenv-virtualenv"
+#if command -v pyenv-virtualenv &>/dev/null; then
+#    eval "$(pyenv virtualenv-init - --no-rehash)"
+#    (pyenv rehash &) 2> /dev/null
+#fi
 
 # Define the home location for NVM
 export NVM_DIR="$HOME/.nvm"
