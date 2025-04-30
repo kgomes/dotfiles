@@ -126,45 +126,12 @@ knownrm() {
 # Allow Composer to use almost as much RAM as Chrome.
 export COMPOSER_MEMORY_LIMIT=-1
 
-# Ask for confirmation when 'prod' is in a command string.
-#prod_command_trap () {
-#  if [[ $BASH_COMMAND == *prod* ]]
-#  then
-#    read -p "Are you sure you want to run this command on prod [Y/n]? " -n 1 -r
-#    if [[ $REPLY =~ ^[Yy]$ ]]
-#    then
-#      echo -e "\nRunning command \"$BASH_COMMAND\" \n"
-#    else
-#      echo -e "\nCommand was not run.\n"
-#      return 1
-#    fi
-#  fi
-#}
-#shopt -s extdebug
-#trap prod_command_trap DEBUG
-
 # Source Rust stuff
 . "$HOME/.cargo/env"
 
 # Export path for STM32 tools
 export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin
 export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources
-
-# Define the root directory for Pyenv
-#export PYENV_ROOT="$HOME/.pyenv"
-
-# Setup pyenv
-#echo "Initializing pyenv"
-#export PATH=$(pyenv root)/shims:$PATH
-#if command -v pyenv &>/dev/null; then
-#    eval "$(pyenv init - --no-rehash)"
-#    (pyenv rehash &) 2> /dev/null
-#fi
-#echo "Initializing pyenv-virtualenv"
-#if command -v pyenv-virtualenv &>/dev/null; then
-#    eval "$(pyenv virtualenv-init - --no-rehash)"
-#    (pyenv rehash &) 2> /dev/null
-#fi
 
 # Define the home location for NVM
 export NVM_DIR="$HOME/.nvm"
@@ -178,3 +145,8 @@ source $(brew --prefix nvm)/etc/bash_completion.d/nvm
 echo "Initializing jEnv"
 eval "$(jenv init - --no-rehash)"
 (jenv rehash &) 2> /dev/null
+
+# Set the Android SDK path
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+PATH=$PATH:$ANDROID_SDK_ROOT/build-tools; PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
