@@ -149,4 +149,6 @@ eval "$(jenv init - --no-rehash)"
 # Set the Android SDK path
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
-PATH=$PATH:$ANDROID_SDK_ROOT/build-tools; PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+PATH=$PATH:$ANDROID_SDK_ROOT/build-tools
+PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
