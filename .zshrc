@@ -65,6 +65,7 @@ alias lt="ls -latr"
 alias hist="history 1"
 alias histg="history 1 | grep"
 alias myclaude="open -n -a \"Claude\" --args --user-data-dir=\"$HOME/Library/Application Support/Claude-Personal\""
+alias mycodex="open -n -a \"Codex\" --env CODEX_HOME=\"$HOME/.codex-personal\""
 
 alias accentson="defaults write -g ApplePressAndHoldEnabled -bool true"
 alias accentsoff="defaults write -g ApplePressAndHoldEnabled -bool false"
