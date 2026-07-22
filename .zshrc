@@ -51,25 +51,6 @@ HISTSIZE=99999
 HISTFILESIZE=999999
 SAVEHIST=$HISTSIZE
 
-# Git aliases.
-alias gs='git status'
-alias gc='git commit'
-alias gp='git pull --rebase'
-alias gcam='git commit -am'
-alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
-
-# Other aliases
-alias ll="ls -lah"
-alias dcmp="docker-compose"
-alias lt="ls -latr"
-alias hist="history 1"
-alias histg="history 1 | grep"
-alias myclaude="open -n -a \"Claude\" --args --user-data-dir=\"$HOME/Library/Application Support/Claude-Personal\""
-alias mycodex="open -n -a \"Codex\" --env CODEX_HOME=\"$HOME/.codex-personal\""
-
-alias accentson="defaults write -g ApplePressAndHoldEnabled -bool true"
-alias accentsoff="defaults write -g ApplePressAndHoldEnabled -bool false"
-
 # Completions.
 autoload -Uz compinit && compinit
 # Case insensitive.
