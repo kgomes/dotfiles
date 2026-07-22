@@ -42,9 +42,6 @@ set guioptions=aAace    " don't show scrollbar in MacVim
 " clipboard
 set clipboard=unnamed   " allow yy, etc. to interact with OS X clipboard
 
-" shortcuts
-map <F2> :NERDTreeToggle<CR>
-
 " remapped keys
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
