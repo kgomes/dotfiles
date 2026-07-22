@@ -20,7 +20,7 @@ export PS1=$'\n'"%F{green} %*%F %3~ %F{white}"$'\n'"$ "
 #plugins=(git brew history kubectl history-substring-search)
 
 # Custom $PATH with extra locations.    
-export PATH="${HOME}/.local/bin:/opt/homebrew/opt/ruby/bin:/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:${HOME}/bin:${HOME}/Library/Python/3.9/bin:${HOME}/.cargo/bin:${HOME}/Library/Application Support/JetBrains/Toolbox/scripts:${HOME}/Applications/google-cloud-sdk/bin:${PATH}"
+export PATH="${HOME}/.local/bin:/opt/homebrew/opt/ruby/bin:/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:${HOME}/bin:${HOME}/.cargo/bin:${HOME}/Library/Application Support/JetBrains/Toolbox/scripts:${HOME}/Applications/google-cloud-sdk/bin:${PATH}"
 
 # Bash-style time output.
 export TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
@@ -50,6 +50,8 @@ bindkey "^[[B" history-substring-search-down
 HISTSIZE=99999
 HISTFILESIZE=999999
 SAVEHIST=$HISTSIZE
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
 
 # Completions.
 autoload -Uz compinit && compinit
@@ -79,12 +81,6 @@ function gsync() {
 export HOMEBREW_AUTO_UPDATE_SECS=604800
 
 # Super useful Docker container oneshots.
-# Usage: dockrun, or dockrun [centos7|fedora27|debian9|debian8|ubuntu1404|etc.]
-# Run on arm64 if getting errors: `export DOCKER_DEFAULT_PLATFORM=linux/amd64`
-dockrun() {
- docker run -it geerlingguy/docker-"${1:-ubuntu1604}"-ansible /bin/bash
-}
-
 # Enter a running Docker container.
 function denter() {
  if [[ ! "$1" ]] ; then
@@ -106,9 +102,6 @@ knownrm() {
  fi
 }
 
-# Allow Composer to use almost as much RAM as Chrome.
-export COMPOSER_MEMORY_LIMIT=-1
-
 # Source Rust stuff
 . "$HOME/.cargo/env"
 
@@ -120,12 +113,10 @@ export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Content
 export NVM_DIR="$HOME/.nvm"
 
 # Set up nvm to manage node versions
-echo "Initializing nvm"
-source $(brew --prefix nvm)/nvm.sh
-source $(brew --prefix nvm)/etc/bash_completion.d/nvm
+source /opt/homebrew/opt/nvm/nvm.sh
+source /opt/homebrew/nvm/etc/bash_completion.d/nvm
 
 # Set up jEnv to manage java versions
-echo "Initializing jEnv"
 eval "$(jenv init - --no-rehash)"
 (jenv rehash &) 2> /dev/null
 
