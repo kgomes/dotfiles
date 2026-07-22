@@ -114,7 +114,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Set up nvm to manage node versions
 source /opt/homebrew/opt/nvm/nvm.sh
-source /opt/homebrew/nvm/etc/bash_completion.d/nvm
+source /opt/homebrew/opt/nvm/etc/bash_completion.d/nvm
 
 # Set up jEnv to manage java versions
 eval "$(jenv init - --no-rehash)"
