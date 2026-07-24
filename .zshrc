@@ -113,8 +113,8 @@ export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Content
 export NVM_DIR="$HOME/.nvm"
 
 # Set up nvm to manage node versions
-source /opt/homebrew/opt/nvm/nvm.sh
-source /opt/homebrew/opt/nvm/etc/bash_completion.d/nvm
+[ -s "$(brew --prefix nvm)/nvm.sh" ] && source "$(brew --prefix nvm)/nvm.sh"
+[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && source "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
 
 # Set up jEnv to manage java versions
 eval "$(jenv init - --no-rehash)"
