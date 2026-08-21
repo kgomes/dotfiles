@@ -3,6 +3,9 @@
 #
 # @author Kevin Gomes (a lot of this comes from Jeff Geerling)
 #
+# Initialize Homebrew (sets PATH, MANPATH, etc.)
+eval "$(/usr/local/bin/brew shellenv 2>/dev/null)"  # Intel
+eval "$(/opt/homebrew/bin/brew shellenv 2>/dev/null)"  # Apple Silicon
 
 # Colorize the output of ls.
 unset LSCOLORS
