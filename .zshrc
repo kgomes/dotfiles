@@ -20,7 +20,7 @@ export PS1=$'\n'"%F{green} %*%F %3~ %F{white}"$'\n'"$ "
 #plugins=(git brew history kubectl history-substring-search)
 
 # Custom $PATH with extra locations.    
-export PATH="${HOME}/.local/bin:/opt/homebrew/opt/ruby/bin:/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:${HOME}/bin:${HOME}/.cargo/bin:${HOME}/Library/Application Support/JetBrains/Toolbox/scripts:${HOME}/Applications/google-cloud-sdk/bin:${PATH}"
+export PATH="${HOME}/.local/bin:$(brew --prefix ruby)/sbin:$(brew --prefix ruby)/bin:$(brew --prefix)/bin:/usr/local/bin:/usr/local/sbin:${HOME}/bin:${HOME}/.cargo/bin:${HOME}/Library/Application Support/JetBrains/Toolbox/scripts:${HOME}/Applications/google-cloud-sdk/bin:${PATH}"
 
 # Bash-style time output.
 export TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
@@ -31,18 +31,8 @@ then
   source ~/.aliases
 fi
 
-# Set architecture-specific brew share path.
-arch_name="$(uname -m)"
-if [ "${arch_name}" = "x86_64" ]; then
-    share_path="/usr/local/share"
-elif [ "${arch_name}" = "arm64" ]; then
-    share_path="/opt/homebrew/share"
-else
-    echo "Unknown architecture: ${arch_name}"
-fi
-
 # Allow history search via up/down keys.
-source ${share_path}/zsh-history-substring-search/zsh-history-substring-search.zsh
+source "$(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
