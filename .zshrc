@@ -16,7 +16,7 @@ export CLICOLOR_FORCE=1
 unsetopt nomatch
 
 # Nicer prompt with time and current directory
-export PS1=$'\n'"%F{green} %*%F %3~ %F{white}"$'\n'"$ "
+export PS1=$'\n'"%F{green} %*%F %3~ %F{cyan}(%m)%F{white}"$'\n'"$ "
 
 # Enable plugins.
 # KGomes - Commented out because I *think* this is for Oh My Zsh which I am hoping to avoid.
