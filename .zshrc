@@ -119,3 +119,7 @@ export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 PATH=$PATH:$ANDROID_SDK_ROOT/build-tools
 PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
+
+# Some UV Python configuration
+export UV_PYTHON_PREFERENCE=only-system
+export UV_PYTHON_DOWNLOADS=never
